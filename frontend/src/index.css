@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, :root{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html, body, #root{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@layer base{
+  body{
+    @apply bg-white dark:bg-slate-950 text-black dark:text-gray-300
+  }
+}
+
+@layer components{
+  .btn-outlined{
+    @apply text-black dark:text-white rounded-lg border border-black dark:border-white px-3 py-1 focus:ring focus:ring-black dark:focus:ring-white
+  }
+}
