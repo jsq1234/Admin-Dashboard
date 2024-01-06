@@ -92,20 +92,6 @@ userSchema.methods.comparePassword = async function (password) {
   }
 };
 
-userSchema.methods.toJSON = function () {
-  return {
-    id: this._id,
-    provider: this.provider,
-    email: this.email,
-    username: this.username,
-    avatar: this.avatar,
-    name: this.name,
-    role: this.role,
-    createdAt: this.createdAt,
-    updatedAt: this.updatedAt,
-  };
-};
-
 userSchema.methods.generateJWT = function () {
   const token = jwt.sign(
     {
@@ -117,6 +103,13 @@ userSchema.methods.generateJWT = function () {
     { expiresIn: "100d" }
   );
   return token;
+};
+
+userSchema.methods.toJSON = function () {
+  const newObj = this.toObject();
+  newObj.id = newObj._id;
+  delete newObj._id;
+  return newObj;
 };
 
 const User = mongoose.model("User", userSchema);

@@ -1,0 +1,43 @@
+.datagrid-container .MuiDataGrid-root {
+    border: none;
+  }
+  
+  .datagrid-container .MuiDataGrid-cell {
+    border-bottom: none;
+  }
+  
+  .datagrid-container .MuiDataGrid-columnHeaders {
+    background-color: aliceblue;
+    border-bottom: none;
+    font-weight: bolder;
+  }
+
+  .dark .datagrid-container .MuiDataGrid-columnHeaders{
+    background-color: rgb(187, 187, 187);
+  }
+  
+  .datagrid-container .MuiDataGrid-virtualScroller {
+    background: rgb(238, 240, 241);
+  }
+  
+  .dark .datagrid-container .MuiDataGrid-virtualScroller {
+    background: rgb(0, 28, 48);
+    color: white;
+    font-weight: 500;
+  }
+  .datagrid-container .MuiDataGrid-footerContainer {
+    border-top: none;
+    background-color: aliceblue;
+    font-weight: bold;
+  }
+
+  .dark .datagrid-container .MuiDataGrid-footerContainer {
+    background-color: rgb(187, 187, 187);
+    border-top: none;
+    color: white !important;
+    font-weight: 500;
+  }
+  .datagrid-container .MuiDataGrid-toolbarContainer .MuiButton-text {
+    color: rgb(242, 242, 187) !important;
+  }
+  

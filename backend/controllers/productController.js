@@ -1,10 +1,5 @@
 const Product = require("../models/product");
 
-function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
 const getProducts = async (req, res) => {
   try {
     const productList = await Product.find({});

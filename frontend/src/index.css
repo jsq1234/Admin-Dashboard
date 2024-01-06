@@ -22,4 +22,5 @@ html, body, #root{
   .btn-outlined{
     @apply text-black dark:text-white rounded-lg border border-black dark:border-white px-3 py-1 focus:ring focus:ring-black dark:focus:ring-white
   }
+
 }

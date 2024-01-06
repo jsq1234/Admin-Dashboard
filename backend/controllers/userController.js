@@ -12,11 +12,9 @@ const userInfo = async (req, res) => {
 
 const getCustomers = async (_, res) => {
   try {
-    const customers = await User.find({ role: "user" }).select(
-      "-password -provider"
-    );
+    const customers = await User.find({ role: "user" });
     console.log("New request!");
-    return res.json(customers);
+    res.send(customers);
   } catch (e) {
     return res.status(401).send("Couldn't fetch customers.");
   }
