@@ -24,8 +24,6 @@ app.listen(port, () => {
       console.log("Connecting to DB");
       await mongoose.connect(uri);
       console.log("Connected to MongoDB database");
-
-      // Do it only once!
     } catch (error) {
       console.log(`Error occured : ${error.message}`);
     }

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useGetCustomersQuery } from "../redux/api";
 import { DataGrid } from "@mui/x-data-grid";
 import { Loader } from "../components/utilities/Loader";
-import "./Customers.css";
+import "./datagrid.css";
+
 const columns = [
   { field: "id", headerName: "ID", flex: 1.25, minWidth: 220 },
   { field: "name", headerName: "Name", flex: 1, minWidth: 180 },
