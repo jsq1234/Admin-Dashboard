@@ -4,7 +4,7 @@ const serverUrl = "http://localhost:8000";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: serverUrl }),
-  tagTypes: ["Products", "Customers", "Transactions"],
+  tagTypes: ["Products", "Customers", "Transactions", "Sales"],
   endpoints: (build) => ({
     getProducts: build.query({
       query: () => "/api/products",
@@ -54,6 +54,10 @@ export const api = createApi({
             ]
           : [{ type: "Transactions", id: "LIST" }],
     }),
+    getSales: build.query({
+      query: () => "/api/sales",
+      providesTags: ["Sales"],
+    }),
   }),
 });
 
@@ -63,4 +67,5 @@ export const {
   useAddProductMutation,
   useGetCustomersQuery,
   useGetTransactionsQuery,
+  useGetSalesQuery,
 } = api;
