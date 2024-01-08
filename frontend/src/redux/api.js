@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const serverUrl = "http://localhost:8000";
+const serverUrl = "https://admin-dashboard-backend-lk16.onrender.com";
 
 export const api = createApi({
   reducerPath: "api",
