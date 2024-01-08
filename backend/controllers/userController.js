@@ -12,9 +12,18 @@ const userInfo = async (req, res) => {
 
 const getCustomers = async (_, res) => {
   try {
-    const customers = await User.find({ role: "user" });
+    const customers = await User.find({ role: "user" }).select("-password");
     console.log("New request!");
     res.send(customers);
+  } catch (e) {
+    return res.status(401).send("Couldn't fetch customers.");
+  }
+};
+
+const getAdmins = async (req, res) => {
+  try {
+    const admins = await User.find({ role: "admin" }).select("-password");
+    res.send(admins);
   } catch (e) {
     return res.status(401).send("Couldn't fetch customers.");
   }
@@ -23,4 +32,5 @@ const getCustomers = async (_, res) => {
 module.exports = {
   userInfo,
   getCustomers,
+  getAdmins,
 };

@@ -4,18 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../redux/themeSlice";
 
 export default function ThemeToggle() {
-  const { darkMode } = useSelector((state) => state.theme);
+  const { mode } = useSelector((state) => state.theme);
   const dispatch = useDispatch();
   return (
     <button className="relative" onClick={() => dispatch(toggleTheme())}>
       <Sun
         className={`absolute transition-opacity ${
-          darkMode ? "opacity-0" : "opacity-100"
+          mode === "dark" ? "opacity-0" : "opacity-100"
         }`}
       />
       <Moon
         className={`transition-opacity ${
-          darkMode ? "opacity-100" : "opacity-0"
+          mode === "dark" ? "opacity-100" : "opacity-0"
         }`}
       />
     </button>
